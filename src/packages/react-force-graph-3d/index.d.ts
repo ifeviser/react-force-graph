@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Scene, Camera, WebGLRenderer, Object3D, Material } from 'three';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-import { ConfigOptions, ForceGraph3DInstance as ForceGraphKapsuleInstance } from '3d-force-graph';
+import { ConfigOptions, ForceGraph3DInstance as ForceGraphKapsuleInstance } from '@ifeviser/3d-force-graph';
 
 export interface GraphData {
   nodes: NodeObject[];
@@ -120,6 +120,8 @@ export interface ForceGraphProps extends ConfigOptions {
   onLinkRightClick?: (link: LinkObject, event: MouseEvent) => void;
   onLinkHover?: (link: LinkObject | null, previousLink: LinkObject | null) => void;
   linkHoverPrecision?: number;
+  hoverFilter(): (obj: Object3D) => boolean;
+  hoverFilter(filterFn: (obj: Object3D) => boolean): ChainableInstance;
   onBackgroundClick?: (event: MouseEvent) => void;
   onBackgroundRightClick?: (event: MouseEvent) => void;
   enableNodeDrag?: boolean;

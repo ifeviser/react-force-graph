@@ -1,5 +1,5 @@
 import fromKapsule from 'react-kapsule';
-import ForceGraph3DKapsule from '3d-force-graph';
+import ForceGraph3DKapsule from '@ifeviser/3d-force-graph';
 import { ForceGraph3DPropTypes } from '../../forcegraph-proptypes';
 
 const ForceGraph3D = fromKapsule(

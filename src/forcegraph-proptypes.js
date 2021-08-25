@@ -16,6 +16,7 @@ const commonPropTypes = {
   nodeColor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   nodeAutoColorBy: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   onNodeHover: PropTypes.func,
+  hoverFilter: PropTypes.func,
   onNodeClick: PropTypes.func,
   linkSource: PropTypes.string,
   linkTarget: PropTypes.string,

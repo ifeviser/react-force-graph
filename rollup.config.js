@@ -4,7 +4,7 @@ import replace from '@rollup/plugin-replace';
 import babel from '@rollup/plugin-babel';
 import { terser } from "rollup-plugin-terser";
 import dts from 'rollup-plugin-dts';
-import { name, homepage, version, dependencies, peerDependencies } from './package.json';
+import { name, homepage, version, dependencies, peerDependencies, unscopedName } from './package.json';
 
 const umdConf = {
   format: 'umd',
@@ -20,12 +20,12 @@ export default [
     output: [
       {
         ...umdConf,
-        file: `dist/${name}.js`,
+        file: `dist/${unscopedName}.js`,
         sourcemap: true
       },
       { // minify
         ...umdConf,
-        file: `dist/${name}.min.js`,
+        file: `dist/${unscopedName}.min.js`,
         plugins: [terser({
           output: { comments: '/Version/' }
         })]
@@ -43,12 +43,12 @@ export default [
     output: [
       {
         format: 'cjs',
-        file: `dist/${name}.common.js`,
+        file: `dist/${unscopedName}.common.js`,
         exports: 'auto'
       },
       {
         format: 'es',
-        file: `dist/${name}.module.js`
+        file: `dist/${unscopedName}.module.js`
       }
     ],
     external: [...Object.keys(dependencies), ...Object.keys(peerDependencies)],
@@ -59,7 +59,7 @@ export default [
   { // expose TS declarations
     input: 'src/index.d.ts',
     output: [{
-      file: `dist/${name}.d.ts`,
+      file: `dist/${unscopedName}.d.ts`,
       format: 'es'
     }],
     plugins: [dts()]

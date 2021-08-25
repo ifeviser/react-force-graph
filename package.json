@@ -1,6 +1,7 @@
 {
-  "name": "react-force-graph",
-  "version": "1.41.7",
+  "name": "@ifeviser/react-force-graph",
+  "unscopedName": "react-force-graph",
+  "version": "1.41.7-rc.1",
   "description": "React component for 2D, 3D, VR and AR force directed graphs",
   "license": "MIT",
   "unpkg": "dist/react-force-graph.min.js",
@@ -9,7 +10,10 @@
   "types": "dist/react-force-graph.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vasturiano/react-force-graph.git"
+    "url": "https://github.com/ifeviser/react-force-graph.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "homepage": "https://github.com/vasturiano/react-force-graph",
   "keywords": [
@@ -40,12 +44,13 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "3d-force-graph": "^1.70",
+    "@ifeviser/3d-force-graph": "^1.70.5-rc.1",
     "3d-force-graph-ar": "^1.7",
     "3d-force-graph-vr": "^2.0",
     "force-graph": "^1.42",
     "prop-types": "^15.7",
-    "react-kapsule": "^2.2"
+    "react-kapsule": "^2.2",
+    "three": "^0.131.3"
   },
   "peerDependencies": {
     "react": "*"
